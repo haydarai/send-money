@@ -1,0 +1,7 @@
+{
+  "name": "send-money",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
