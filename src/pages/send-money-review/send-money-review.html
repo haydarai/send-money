@@ -1,0 +1,47 @@
+<!--
+  Generated template for the SendMoneyReviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Review</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item padding>
+      <ion-avatar item-start>
+        <img src="{{ transaction.contact.avatar }}">
+      </ion-avatar>
+      <h2>{{transaction.contact.name}}</h2>
+    </ion-item>
+
+    <ion-item-divider color="light"></ion-item-divider>
+
+    <ion-item>
+      <h2 float-left>Current Balance</h2>
+      <p float-right>S${{ transaction.amount * 3.14 }}</p>
+    </ion-item>
+
+    <ion-item>
+      <h2 float-left>Total Amount</h2>
+      <p float-right class="substract">-S${{ transaction.amount }}</p>
+    </ion-item>
+
+    <ion-item>
+      <h2 float-left>Remaining Balance</h2>
+      <p float-right>S${{ (transaction.amount * 3.14) - transaction.amount }}</p>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button full (click)=reviewTransaction()>Pay</button>
+  </div>
+
+</ion-content>
