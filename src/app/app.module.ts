@@ -13,6 +13,7 @@ import { ContactListPage } from '../pages/contact-list/contact-list';
 import { SendMoneyReviewPage } from '../pages/send-money-review/send-money-review';
 import { SendMoneyReceiptPage } from '../pages/send-money-receipt/send-money-receipt';
 import { TransactionHistoryPage } from '../pages/transaction-history/transaction-history';
+import { BalancePage } from '../pages/balance/balance';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TransactionHistoryPage } from '../pages/transaction-history/transaction
     ContactListPage,
     SendMoneyReviewPage,
     SendMoneyReceiptPage,
-    TransactionHistoryPage
+    TransactionHistoryPage,
+    BalancePage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { TransactionHistoryPage } from '../pages/transaction-history/transaction
     ContactListPage,
     SendMoneyReviewPage,
     SendMoneyReceiptPage,
-    TransactionHistoryPage
+    TransactionHistoryPage,
+    BalancePage
   ],
   providers: [
     Contacts,

@@ -31,7 +31,6 @@ export class TransactionHistoryPage {
         multiple: true
       })
       .then(contacts => {
-        console.log(contacts)
         for (let i = 0; i < contacts.length; i++) {
           if (contacts[i].name.givenName !== null) {
             const { givenName, familyName } = contacts[i].name;

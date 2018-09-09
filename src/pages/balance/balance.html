@@ -1,5 +1,5 @@
 <!--
-  Generated template for the TransactionHistoryPage page.
+  Generated template for the BalancePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -9,19 +9,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Transaction History</ion-title>
+    <ion-title>Balance</ion-title>
   </ion-navbar>
 </ion-header>
 
-
-<ion-content class="list-avatar-page">
+<ion-content>
   <ion-list>
-    <ion-item *ngFor="let transaction of transactions">
-      <ion-avatar item-start>
-        <img src="{{ transaction.avatar }}">
-      </ion-avatar>
-      <h2>{{ transaction.name }}</h2>
-      <p>S${{ transaction.amount }}</p>
+    <ion-item>
+      <h2 float-left>Account ID</h2>
+      <p float-right>#317236482</p>
+    </ion-item>
+    <ion-item>
+      <h2 float-left>Account Holder</h2>
+      <p float-right>Kuriakin J. Zeng</p>
+    </ion-item>
+    <ion-item>
+      <h2 float-left>Current Balance</h2>
+      <p float-right>S$4985</p>
     </ion-item>
   </ion-list>
 
