@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { SendMoneyFormPage } from '../pages/send-money-form/send-money-form';
+import { TransactionHistoryPage } from '../pages/transaction-history/transaction-history';
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,7 +20,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Transfer', component: SendMoneyFormPage }
+      { title: 'Transfer', component: SendMoneyFormPage },
+      { title: 'Transaction History', component: TransactionHistoryPage }
     ];
   }
 
