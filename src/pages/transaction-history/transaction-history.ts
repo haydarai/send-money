@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Contacts } from '@ionic-native/contacts';
 
 /**
@@ -10,7 +10,6 @@ import { Contacts } from '@ionic-native/contacts';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-transaction-history',
   templateUrl: 'transaction-history.html',

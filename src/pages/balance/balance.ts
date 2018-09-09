@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SiriShortcuts } from '@ionic-native/siri-shortcuts';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the BalancePage page.
@@ -8,18 +9,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-balance',
   templateUrl: 'balance.html',
 })
 export class BalancePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public siriShortcuts: SiriShortcuts) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BalancePage');
+    this.siriShortcuts.donate({
+      persistentIdentifier: 'check-balance',
+      title: 'Check current balance',
+      suggestedInvocationPhrase: 'Check balance',
+      userInfo: {},
+      isEligibleForSearch: true,
+      isEligibleForPrediction: true,
+    })
+      .then(() => console.log('Shortcut donated.'))
+      .catch((error: any) => console.error(error));
   }
 
 }

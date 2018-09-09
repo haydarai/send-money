@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { SendMoneyReceiptPage } from '../send-money-receipt/send-money-receipt';
 
 /**
@@ -9,7 +9,6 @@ import { SendMoneyReceiptPage } from '../send-money-receipt/send-money-receipt';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-send-money-review',
   templateUrl: 'send-money-review.html',

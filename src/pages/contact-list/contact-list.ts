@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { Contacts } from '@ionic-native/contacts';
 import { Diagnostic } from '@ionic-native/diagnostic';
 
@@ -11,7 +11,6 @@ import { Diagnostic } from '@ionic-native/diagnostic';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-contact-list',
   templateUrl: 'contact-list.html',
