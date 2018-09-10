@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-// import { SiriShortcuts } from '@ionic-native/siri-shortcuts';
+import { SiriShortcuts } from '@ionic-native/siri-shortcuts';
 import { NavController, NavParams } from 'ionic-angular';
 
 /**
@@ -15,21 +15,33 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class BalancePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public siriShortcuts: SiriShortcuts) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BalancePage');
-    // this.siriShortcuts.donate({
-    //   persistentIdentifier: 'check-balance',
-    //   title: 'Check current balance',
-    //   suggestedInvocationPhrase: 'Check balance',
-    //   userInfo: {},
-    //   isEligibleForSearch: true,
-    //   isEligibleForPrediction: true,
-    // })
-    //   .then(() => console.log('Shortcut donated.'))
-    //   .catch((error: any) => console.error(error));
+    this.siriShortcuts.donate({
+      persistentIdentifier: 'check-balance',
+      title: 'Check current balance',
+      suggestedInvocationPhrase: 'Check balance',
+      userInfo: { page: 'balance' },
+      isEligibleForSearch: true,
+      isEligibleForPrediction: true,
+    })
+      .then(() => console.log('Shortcut donated.'))
+      .catch((error: any) => console.error(error));
+  }
+
+  addShortcut() {
+    console.log('click addShortcut')
+    this.siriShortcuts.present({
+      persistentIdentifier: 'check-balance',
+      title: 'Check current balance',
+      suggestedInvocationPhrase: 'Check balance',
+      userInfo: { page: 'balance' },
+    })
+      .then(() => console.log('Shortcut added.'))
+      .catch((error: any) => console.error(error));
   }
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavController, NavParams } from 'ionic-angular';
 import { Contacts } from '@ionic-native/contacts';
+import { SiriShortcuts } from '@ionic-native/siri-shortcuts'
 
 /**
  * Generated class for the TransactionHistoryPage page.
@@ -18,11 +19,12 @@ export class TransactionHistoryPage {
 
   private transactions = [];
 
-  constructor(public contacts: Contacts, public navCtrl: NavController, public navParams: NavParams, public sanitizer: DomSanitizer) {
+  constructor(public contacts: Contacts, public navCtrl: NavController, public navParams: NavParams, public sanitizer: DomSanitizer, public siriShortcuts: SiriShortcuts) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TransactionHistoryPage');
+
     this.contacts.find([
       'name', 'photos'
     ], {
@@ -48,6 +50,29 @@ export class TransactionHistoryPage {
         }
       })
       .catch(error => console.error(error));
+
+    this.siriShortcuts.donate({
+      persistentIdentifier: 'check-transaction-history',
+      title: 'Check transaction history',
+      suggestedInvocationPhrase: 'Check transaction history',
+      userInfo: { page: 'transaction' },
+      isEligibleForSearch: true,
+      isEligibleForPrediction: true,
+    })
+      .then(() => console.log('Shortcut donated.'))
+      .catch((error: any) => console.error(error));
+  }
+
+  addShortcut() {
+    console.log('click addShortcut')
+    this.siriShortcuts.present({
+      persistentIdentifier: 'check-transaction-history',
+      title: 'Check transaction history',
+      suggestedInvocationPhrase: 'Check transaction history',
+      userInfo: { page: 'transaction' },
+    })
+      .then(() => console.log('Shortcut added.'))
+      .catch((error: any) => console.error(error));
   }
 
 }
