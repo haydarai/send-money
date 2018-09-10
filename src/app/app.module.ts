@@ -5,6 +5,7 @@ import { Contacts } from '@ionic-native/contacts';
 import { Diagnostic } from '@ionic-native/diagnostic';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SiriShortcuts } from '@ionic-native/siri-shortcuts';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -46,6 +47,7 @@ import { BalancePage } from '../pages/balance/balance';
     Diagnostic,
     StatusBar,
     SplashScreen,
+    SiriShortcuts,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
